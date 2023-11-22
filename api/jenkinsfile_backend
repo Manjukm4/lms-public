@@ -8,7 +8,7 @@ pipeline {
 
     DOCKERHUB_CREDENTIALS = credentials('dockeruser')
      registry = "manju507/backend-lms"
-        registryCredential = 'dockerusermubeen'
+        registryCredential = 'dockeruser'
        
     }
 
