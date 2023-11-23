@@ -7,8 +7,7 @@ pipeline {
     environment {
 
     DOCKERHUB_CREDENTIALS = credentials('dockeruser')
-     registry = "manju507/backend-lms"
-        registryCredential = 'dockeruser'
+     
        
     }
 
@@ -17,7 +16,7 @@ pipeline {
         
         stage('Building the docker image') {
             steps {
-                sh 'cd api && docker build -t manju507/backend-lms .'
+                sh 'cd api && docker build -t manjukm4/backend-lms .'
             }
         }
         stage('Logging into dockerhub account') {
@@ -27,12 +26,12 @@ pipeline {
         }
         stage('pushing the docker image into dockerhub') {
             steps {
-                  sh 'docker push manju507/backend-lms'
+                  sh 'docker push manjukm4/backend-lms'
             }
         }
         stage('Remove old docker images') {
              steps {
-                 sh 'docker rmi -f manju507/backend-lms'
+                 sh 'docker rmi -f manjukm4/backend-lms'
             }
         }
          stage('creating database container') {
